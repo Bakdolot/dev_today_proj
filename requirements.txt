@@ -1,0 +1,8 @@
+Django==3.2
+djangorestframework==3.13.1
+django-crontab==0.7.1
+Pillow==9.0.1
+psycopg2-binary==2.9.3
+python-dotenv==0.19.2
+flake8==4.0.1
+djoser==2.1.0
