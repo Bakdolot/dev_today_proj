@@ -16,9 +16,9 @@ class Article(models.Model):
         return self.title[:20]
 
     class Meta:
-        verbose_name = _('Article')
-        verbose_name_plural = _('Articles')
-        ordering = ['-creation_date']
+        verbose_name = _("Article")
+        verbose_name_plural = _("Articles")
+        ordering = ["-creation_date"]
 
 
 class Comment(models.Model):
@@ -33,8 +33,8 @@ class Comment(models.Model):
     creation_date = models.DateTimeField(_("creattion date"), auto_now_add=True)
 
     def __str__(self) -> str:
-        return f'{self.author_name} -> {self.article.title[:20]}'
+        return f"{self.author_name} -> {self.article.title[:20]}"
 
     class Meta:
-        verbose_name = _('Comment')
-        verbose_name_plural = _('Comments')
+        verbose_name = _("Comment")
+        verbose_name_plural = _("Comments")
