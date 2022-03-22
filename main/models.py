@@ -8,7 +8,7 @@ class Article(models.Model):
     title = models.CharField(_("title"), max_length=255)
     description = models.TextField(_("description"))
     creation_date = models.DateTimeField(_("creattion date"), auto_now_add=True)
-    upvotes = models.PositiveIntegerField(_("amount of upvotes"))
+    upvotes = models.PositiveIntegerField(_("amount of upvotes"), default=0)
     slug = models.SlugField(_("slug"), unique=True)
     is_active = models.BooleanField(_("is active"), default=True)
 
