@@ -12,7 +12,7 @@ RUN apt update \
 
 # RUN python3 -m venv venv
 # ENV PATH="./venv/bin:$PATH"
-RUN mkdir /home/app/web/staticfiles
+RUN mkdir /home/app/web/static
 
 # install dependencies
 RUN pip3 install --upgrade pip
