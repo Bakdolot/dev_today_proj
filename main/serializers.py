@@ -1,3 +1,5 @@
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from djoser.serializers import UserSerializer
 
@@ -26,4 +28,16 @@ class ArticleListSerializer(ArticleSerializer):
 
 
 class AddUpvoteSerializer(serializers.Serializer):
-    slug = serializers.SlugField(required=True)
+    slug = serializers.SlugField()
+
+    def validate_slug(self, slug):
+        try:
+            self.instance = Article.objects.get(slug=slug)
+            return slug
+        except Article.DoesNotExist:
+            raise ValidationError(message=_("Article not found"))
+
+    def add_upvote(self):
+        article = self.instance
+        article.upvotes += 1
+        article.save()

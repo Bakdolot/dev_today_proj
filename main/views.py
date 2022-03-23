@@ -41,9 +41,9 @@ class ArticleViewSet(viewsets.ModelViewSet):
 
     @action(["post"], detail=False)
     def add_upvote(self, request, *args, **kwargs):
-        article = get_object_or_404(self.get_queryset(), slug=request.data["slug"])
-        article.upvotes += 1
-        article.save()
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.add_upvote()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
