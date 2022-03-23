@@ -22,7 +22,7 @@ from .yasg import urlpatterns as yasg_urls
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("main/", include("main.urls")),
-    path("auth/", include("djoser.urls")),
+    path("auth/", include("djoser.urls.authtoken")),
 ]
 
 urlpatterns += yasg_urls
