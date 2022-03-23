@@ -8,7 +8,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 RUN apt update \
-    && apt install -y python python3 python3-pip python3-venv python3-dev libpq-dev curl
+    && apt install -y python python3 python3-pip python3-venv python3-dev libpq-dev curl crontab
 
 # RUN python3 -m venv venv
 # ENV PATH="./venv/bin:$PATH"

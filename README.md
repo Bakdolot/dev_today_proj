@@ -45,6 +45,10 @@ Depends programs `docker`, `docker-compose`
     docker-compose exec web python3 manage.py collectstatic
 ```
 
+6) Start cron tasks 
+
+    ```docker-compose exec web python3 manage.py crontab add```
+
 restart container with command "`docker-compose restart`"
 
 
