@@ -74,3 +74,10 @@ Add systemcd service for docker compose autorestart
     [Install]
     WantedBy=multi-user.target
 ```
+
+
+Project host:   `130.162.211.28`
+
+github: `https://github.com/Bakdolot/dev_today_proj`
+
+postman:    `https://www.postman.com/joint-operations-explorer-51599287/workspace/test-project/collection/16782161-f01d74bf-817c-414f-a088-638a58f56ef6?action=share&creator=16782161`
