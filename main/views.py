@@ -30,6 +30,8 @@ class ArticleViewSet(viewsets.ModelViewSet):
     def get_permissions(self):
         if self.action in ["update", "partial_update", "destroy"]:
             self.permission_classes = [IsOwner]
+        if self.action == "add_upvote":
+            self.permission_classes = []
         return super().get_permissions()
 
     def perform_create(self, serializer):
